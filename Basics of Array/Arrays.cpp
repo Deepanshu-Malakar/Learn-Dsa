@@ -53,9 +53,9 @@ public:
     }
 
     void show()
-    {   
+    {
         // for(int i=0;i<5*used_size;i++){
-            // cout<<"-";
+        // cout<<"-";
         // }
         // cout<<endl;
         cout << "[ ";
@@ -71,10 +71,11 @@ public:
             }
         }
         cout << "]" << endl;
-        for(int i=0;i<5*used_size;i++){
-            cout<<"-";
+        for (int i = 0; i < 5 * used_size; i++)
+        {
+            cout << "-";
         }
-        cout<<endl;
+        cout << endl;
     }
 
     void remove(int element)
@@ -114,13 +115,17 @@ public:
         }
     }
 
-    void bubble_sort(){
-        for(int i=0;i<used_size-1;i++){
-            for(int j=0;j<used_size-i;j++){
-                if(ptr[j]>=ptr[j+1]){
-                    int temp=ptr[j];
-                    ptr[j]=ptr[j+1];
-                    ptr[j+1]=temp;
+    void bubble_sort()
+    {
+        for (int i = 0; i < used_size - 1; i++)
+        {
+            for (int j = 0; j < used_size - i; j++)
+            {
+                if (ptr[j] >= ptr[j + 1])
+                {
+                    int temp = ptr[j];
+                    ptr[j] = ptr[j + 1];
+                    ptr[j + 1] = temp;
                 }
             }
         }
@@ -137,9 +142,9 @@ int main()
     marks.show();
     marks.selection_sort();
     marks.show();
-    marks.insert_index(2,3);
-    marks.insert_index(1,76);
-    marks.insert_index(3,14);
+    marks.insert_index(2, 3);
+    marks.insert_index(1, 76);
+    marks.insert_index(3, 14);
     marks.show();
     marks.bubble_sort();
     marks.show();

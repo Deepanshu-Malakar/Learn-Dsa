@@ -48,6 +48,10 @@ class Array:
                     self.l[j]=self.l[j+1]
                 self.used_size-=1
                 return None
+    
+    def pop(self):
+        self.l.pop()
+        self.used_size-=1
                 
 
     
@@ -65,6 +69,8 @@ marks.show()
 marks.bubble_sort()
 marks.show()
 marks.remove(4)
+marks.show()
+marks.pop()
 marks.show()
 
     

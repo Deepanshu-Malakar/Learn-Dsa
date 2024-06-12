@@ -31,6 +31,25 @@ class Array:
             print(self.l[i],end=" ")
         print("}")
 
+    def bubble_sort(self):
+        for i in range(0,self.used_size -1):
+            for j in range(i+1,self.used_size):
+                if self.l[i]>=self.l[j]:
+                    self.l[i],self.l[j]=self.l[j],self.l[i]
+
+    def remove(self,x:int):
+        n=self.used_size
+        if n==0:
+            print("array is empty")
+            return None
+        for i in range(0,n):
+            if self.l[i]==x:
+                for j in range(i,n):
+                    self.l[j]=self.l[j+1]
+                self.used_size-=1
+                return None
+                
+
     
 #=======================================================================================================================
 #=====================================================main()================
@@ -42,6 +61,10 @@ marks.append(3)
 marks.append(6)
 marks.show()
 marks.insert_index(2,9)
+marks.show()
+marks.bubble_sort()
+marks.show()
+marks.remove(4)
 marks.show()
 
     

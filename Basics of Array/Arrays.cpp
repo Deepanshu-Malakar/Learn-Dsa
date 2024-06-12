@@ -130,6 +130,21 @@ public:
             }
         }
     }
+
+    void insertion_sort()
+    {
+        for (int i = 0; i < used_size; i++)
+        {
+            int j = i;
+            while (j > 0 && ptr[j - 1] >= ptr[j])
+            {
+                int temp = ptr[j];
+                ptr[j] = ptr[j - 1];
+                ptr[j - 1] = temp;
+                j--;
+            }
+        }
+    }
 };
 
 int main()
@@ -146,6 +161,6 @@ int main()
     marks.insert_index(1, 76);
     marks.insert_index(3, 14);
     marks.show();
-    marks.bubble_sort();
+    marks.insertion_sort();
     marks.show();
 }

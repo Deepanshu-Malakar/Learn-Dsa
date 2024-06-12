@@ -1,3 +1,4 @@
+
 class Array:
 
     def __init__(self,total_size) -> None:
@@ -36,6 +37,16 @@ class Array:
             for j in range(i+1,self.used_size):
                 if self.l[i]>=self.l[j]:
                     self.l[i],self.l[j]=self.l[j],self.l[i]
+    
+    def bubble_sort(self):
+        n=self.used_size
+        for i in range(0,n-1):
+            for j in range(0,n-i-1):
+                if self.l[j]>=self.l[j+1]:
+                    temp=self.l[j]
+                    self.l[j]=self.l[j+1]
+                    self.l[j+1]=temp
+
 
     def remove(self,x:int):
         n=self.used_size
@@ -52,6 +63,18 @@ class Array:
     def pop(self):
         self.l.pop()
         self.used_size-=1
+    
+    
+    
+    def insertion_sort(self):
+        n=self.used_size
+        for i in range(0,n):
+            j=i
+            while(j>0 and self.l[j-1]>=self.l[j]):
+                self.l[j-1],self.l[j]=self.l[j],self.l[j-1]
+                j-=1
+        
+
                 
 
     
@@ -64,13 +87,7 @@ marks.append(4)
 marks.append(3)
 marks.append(6)
 marks.show()
-marks.insert_index(2,9)
-marks.show()
-marks.selection_sort()
-marks.show()
-marks.remove(4)
-marks.show()
-marks.pop()
+marks.insertion_sort()
 marks.show()
 
     

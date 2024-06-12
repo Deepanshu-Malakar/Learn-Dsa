@@ -90,7 +90,7 @@ public:
         }
     }
 
-    void bubblesort()
+    void bubble_sort()
     {
         for (int i = 0; i < used_size - 1; i++)
         {
@@ -115,6 +115,6 @@ int main()
     marks.append(1);
     marks.insert_index(2, 4);
     marks.show();
-    marks.bubblesort();
+    marks.bubble_sort();
     marks.show();
 }

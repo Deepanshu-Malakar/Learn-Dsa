@@ -68,7 +68,7 @@ int remove_element(struct my_array *a, int x)
     (a->used_size)--;
 }
 
-int bubble_sort(struct my_array *a)
+int selection_sort(struct my_array *a)
 {
     int n = a->used_size;
     for (int i = 0; i < n - 1; i++)
@@ -100,6 +100,6 @@ int main()
     append_array(&marks, 23);
     append_array(&marks, 3);
     show_array(&marks);
-    bubble_sort(&marks);
+    selection_sort(&marks);
     show_array(&marks);
 }

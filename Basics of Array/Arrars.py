@@ -31,7 +31,7 @@ class Array:
             print(self.l[i],end=" ")
         print("}")
 
-    def bubble_sort(self):
+    def selection_sort(self):
         for i in range(0,self.used_size -1):
             for j in range(i+1,self.used_size):
                 if self.l[i]>=self.l[j]:
@@ -66,7 +66,7 @@ marks.append(6)
 marks.show()
 marks.insert_index(2,9)
 marks.show()
-marks.bubble_sort()
+marks.selection_sort()
 marks.show()
 marks.remove(4)
 marks.show()

@@ -17,11 +17,6 @@ void create_array(struct my_array *a, int t_size, int used_size)
 
 void append_array(struct my_array *a, int x)
 {
-    if (a->used_size == a->total_size)
-    {
-        return;
-    }
-    
     (a->ptr)[a->used_size] = x;
     (a->used_size)++;
 }
@@ -39,20 +34,12 @@ void show_array(struct my_array *a)
 
 void pop_array(struct my_array *a)
 {
-    if (a->used_size == 0)
-    {
-        return;
-    }
     (a->used_size)--;
 }
 
-int remove_element(struct my_array *a, int x)
+void remove_element(struct my_array *a, int x)
 {
     int n = a->used_size;
-    if (n == 0)
-    {
-        return -1;
-    }
 
     for (int i = 0; i < n; i++)
     {
@@ -64,25 +51,27 @@ int remove_element(struct my_array *a, int x)
             }
             break;
         }
+    
     }
     (a->used_size)--;
 }
 
-int selection_sort(struct my_array *a)
-{
+int bubble_sort(struct my_array *a){ 
     int n = a->used_size;
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = i + 1; j < n; j++)
+    for(int i=0;i<n-1;i++){
+        for(int j=i;j<n-i-1;j++)
         {
-            if ((a->ptr)[i] >= (a->ptr)[j])
+            if((a->ptr)[i]>=(a->ptr)[j])
             {
-                int temp = (a->ptr)[i];
-                (a->ptr)[i] = (a->ptr)[j];
-                (a->ptr)[j] = temp;
+                int temp=(a->ptr)[i];
+                (a->ptr)[i]=(a->ptr)[j];
+                (a->ptr)[j]=temp;
+
             }
         }
+
     }
+
 }
 
 int main()
@@ -94,12 +83,6 @@ int main()
     show_array(&marks);
     append_array(&marks, 30);
     show_array(&marks);
-    remove_element(&marks, 20);
-    show_array(&marks);
-    append_array(&marks, 12);
-    append_array(&marks, 23);
-    append_array(&marks, 3);
-    show_array(&marks);
-    selection_sort(&marks);
+    remove_element(&marks,20);
     show_array(&marks);
 }

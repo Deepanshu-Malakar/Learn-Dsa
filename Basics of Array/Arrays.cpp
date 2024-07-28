@@ -145,6 +145,50 @@ public:
             }
         }
     }
+
+    void merge_sort(int low , int high)
+    {
+        if (low >= high)
+        {
+            return;
+        }
+        int mid = (low + high) / 2;
+        merge_sort(0, mid);
+        merge_sort(mid + 1, high);
+        int i = low, j = mid + 1;
+        vector<int> a;
+        while (i <= mid && j <= high)
+        {
+            if (ptr[i] <= ptr[j])
+            {
+                a.push_back(ptr[i]);
+                i++;
+            }
+            else
+            {
+                a.push_back(ptr[j]);
+                j++;
+            }
+        }
+        if (i <= mid)
+        {
+            for (i; i <= mid; i++)
+            {
+                a.push_back(ptr[i]);
+            }
+        }
+        else if (j <= high)
+        {
+            for (j; j <= high; j++)
+            {
+                a.push_back(ptr[j]);
+            }
+        }
+        for (int i = low; i <= high; i++)
+        {
+            ptr[i] = a[i - low];
+        }
+    }
 };
 
 int main()
@@ -163,4 +207,10 @@ int main()
     marks.show();
     marks.insertion_sort();
     marks.show();
+    marks.insert_index(4,11);
+    marks.insert_index(4,1);
+    marks.show();
+    marks.merge_sort(0,8);
+    marks.show();
+
 }

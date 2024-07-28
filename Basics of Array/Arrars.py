@@ -73,6 +73,35 @@ class Array:
             while(j>0 and self.l[j-1]>=self.l[j]):
                 self.l[j-1],self.l[j]=self.l[j],self.l[j-1]
                 j-=1
+    
+    def merge_sort(self,low,high):
+        mid=(low+high)//2
+        if low>=high:
+            return None
+        
+        self.merge_sort(low,mid)
+        self.merge_sort(mid+1,high)
+        #merge algorythm
+
+        i=low
+        j=mid+1
+        x=[]
+        while(i<=mid and j<= high):
+            if(self.l[i]<=self.l[j]):
+                x.append(self.l[i])
+                i+=1
+            else:
+                x.append(self.l[j])
+                j+=1
+        while i<=mid:
+            x.append(self.l[i])
+            i+=1
+        while j<=high:
+            x.append(self.l[j])
+            j+=1
+        for i in range(low,high+1):
+            self.l[i]=x[i-low]
+
         
 
                 
@@ -87,7 +116,7 @@ marks.append(4)
 marks.append(3)
 marks.append(6)
 marks.show()
-marks.insertion_sort()
+marks.merge_sort(0,3)
 marks.show()
 
     

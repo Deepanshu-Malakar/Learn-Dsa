@@ -65,4 +65,7 @@ int main()
     int v[] = {10, 5, 4, 7, 8, 9};
     merge_sort(v,0,5);
     show(v,6);
+    int a=5;
+    int b=6;
+    
 }

@@ -16,7 +16,6 @@ void insert_at_tail(int x)
     {
         head->data = x;
         head->next = NULL;
-        
     }
 
     else
@@ -31,7 +30,7 @@ void insert_at_tail(int x)
         new_node->next = NULL;
     }
     length++;
-    printf("%d inserted at tail , length = %d\n",x,length);
+    printf("%d inserted at tail , length = %d\n", x, length);
 }
 
 void insert_at_head(int x)
@@ -41,7 +40,7 @@ void insert_at_head(int x)
     i->next = head;
     head = i;
     length++;
-    printf("%d inserted at head , length = %d\n",x,length);
+    printf("%d inserted at head , length = %d\n", x, length);
 }
 
 void insert_at_position(int pos, int data)
@@ -56,7 +55,7 @@ void insert_at_position(int pos, int data)
     new_node->next = i->next;
     i->next = new_node;
     length++;
-    printf("%d inserted at position %d , length = %d\n",data,pos,length);
+    printf("%d inserted at position %d , length = %d\n", data, pos, length);
 }
 
 void print_linked_list()
@@ -71,42 +70,50 @@ void print_linked_list()
     printf(" NULL\n");
 }
 
-void delete_at_tail(){
-    struct Node *i=head;
+void delete_at_tail()
+{
+    struct Node *i = head;
 
-    for(int c=1;c<length-1;c++){
-        i=i->next;
+    for (int c = 1; c < length - 1; c++)
+    {
+        i = i->next;
     }
-    int t=i->next->data;
-    i->next=NULL;
+    int t = i->next->data;
+    i->next = NULL;
     length--;
-    printf("%d deleted at tail , length = %d\n",t,length);
+    printf("%d deleted at tail , length = %d\n", t, length);
 }
 
-void delete_at_index(int pos){
-    struct Node *i=head;
-    for(int t=1;t<pos-1;t++){
-        i=i->next;
+void delete_at_index(int pos)
+{
+    struct Node *i = head;
+    for (int t = 1; t < pos - 1; t++)
+    {
+        i = i->next;
     }
-    int x=i->next->data;
-    i->next=i->next->next;
+    int x = i->next->data;
+    i->next = i->next->next;
     length--;
-    printf("%d deleted at position %d , length = %d\n",x,pos,length);
+    printf("%d deleted at position %d , length = %d\n", x, pos, length);
 }
 
-void sort(){
-    struct Node *i=head;
-    struct Node *j=head->next;
-    while(i!=NULL){
-        while(j!=NULL){
-            if(j->data<i->data){
-                int temp=i->data;
-                i->data=j->data;
-                j->data=temp;
+void sort()
+{
+    struct Node *i = head;
+    struct Node *j = head->next;
+    while (i != NULL)
+    {
+        while (j != NULL)
+        {
+            if (j->data < i->data)
+            {
+                int temp = i->data;
+                i->data = j->data;
+                j->data = temp;
             }
-            j=j->next;
+            j = j->next;
         }
-        i=i->next;
+        i = i->next;
     }
 }
 

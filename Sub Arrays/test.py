@@ -10,13 +10,14 @@ def speak(x):
     engine.runAndWait()
 
 import gtts
-# import playsound
+import playsound
 import os
 
 def speak_female(x):
     sound=gtts.gTTS(x, lang="hi")
     sound.save("sound.mp3")
-    os.startfile("sound.mp3")
+    playsound.playsound("sound.mp3")
+    os.remove("sound.mp3")
 
 
 speak("hii, how are you?")

@@ -35,4 +35,5 @@ int main()
         }
     }
     cout << "max profit is: " << max_profit;
+    return 0;
 }

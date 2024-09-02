@@ -14,7 +14,10 @@ example:
 Algorythm:
 1] sort the array
 2] remove the duplicates
-3] 
+3] create variables start=0,end=0,start_new=0,end_new=0,length=1,max_length=0,i=0;
+4] while i<n    set start_new=end_new=i,   while(a[i+1]==a[i]+1)->increment i length end_new
+5]outside while loop check if lenght>maxLength set maxlength to length, start=startnew  end=end_new i++ 
+6]print the array
 
 */
 void show_arr(int a[], int n)

@@ -34,5 +34,5 @@ int main(){
             }
         }
     }
-    cout<<"Total Subarrays: "<<count;
+    cout<<"Total Subarrays: "<<count; 
 }

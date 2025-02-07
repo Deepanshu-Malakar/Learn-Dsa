@@ -16,11 +16,11 @@ int findMin(int array[],int size){
             low++;
             high--;
         }
-        else if(array[low]<=array[mid]){//left half is sorted
+        else if(array[low]<=array[mid]){                        //left half is sorted
             if(array[low]<min) min=array[mid];
             low=mid+1;
         }
-        else{//right half is sorted
+        else{                                                   //right half is sorted
             if(array[mid]<min) min=array[mid];
             high=mid-1;
         }
@@ -31,7 +31,7 @@ int findMin(int array[],int size){
 }
 
 int main(){          //l  m   h
-    int array[]={26,26,81,1,2,5,7,9,24,25,26,26,26};
+    int array[]={30,45,81,1,2,5,7,9,24,25,26,27,28};
     int size=sizeof(array)/sizeof(int);
     int ele=26;
     cout<<"minimum element = "<<findMin(array,size);

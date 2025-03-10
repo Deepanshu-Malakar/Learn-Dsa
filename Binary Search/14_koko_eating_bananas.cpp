@@ -83,10 +83,10 @@ int bananas_eaten_per_hour(int array[],int hours,int size){
 }
 
 int main(){
-    int array[] = {3,6,4,2,1,8,1,6,9};
+    int array[] = {1, 9, 2, 1, 6, 4, 2, 1, 6, 4, 9, 3, 4, 2, 6, 2, 9, 3, 9, 10, 7, 3, 8, 9, 1, 5, 7, 9, 10, 4, 7, 1, 10, 4, 7, 1, 6, 3, 4, 7, 5, 8, 2, 10, 7, 2, 3, 1, 4, 2, 4, 9, 7, 5, 5, 3, 4, 1, 3, 7, 6, 9, 2, 1, 10, 4, 1, 5, 6, 3, 8, 5, 7, 7, 4, 5, 4, 4, 7, 4, 2, 5, 5, 4, 5, 8, 7, 2, 1, 8, 8, 10, 6, 1, 5, 8, 2, 2, 4, 9};
     int size = sizeof(array)/sizeof(int);
 
-    int hours = 10;
+    int hours = 120;
 
     cout<<"bananas eaten per hour is to eat all bananas in "<<hours<<" hrs is: "<<bananas_eaten_per_hour(array,hours,size);
     return 0;

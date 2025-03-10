@@ -49,10 +49,25 @@ bool speed_is_enough(int array[],int size,int hours,int speed){
     }
 }
 
+int maximum_array(int array[],int size){
+    int maximum = 0;
+    for(int i=0;i<size;i++){
+        if(array[i]>maximum){
+            maximum = array[i];
+        }
+    }
+    return maximum;
+}
+
 int bananas_eaten_per_hour(int array[],int hours,int size){
     int low = 1;
-    int high = hours;
+    int high = maximum_array(array,size);
     int speed = (high + low)/2;
+
+    if(size > hours){
+        printf("Infinite, this task is impossible\n");
+        return -1;
+    }
     int possible_solution = 1;
     while(low<=high){
         speed = (high + low)/2;
@@ -68,11 +83,11 @@ int bananas_eaten_per_hour(int array[],int hours,int size){
 }
 
 int main(){
-    int array[] = {3,6,4,2,1};
+    int array[] = {3,6,4,2,1,8,1,6,9};
     int size = sizeof(array)/sizeof(int);
 
-    int hours = 8;
+    int hours = 10;
 
-    cout<<"bananas eaten per hour is: "<<bananas_eaten_per_hour(array,hours,size);
+    cout<<"bananas eaten per hour is to eat all bananas in "<<hours<<" hrs is: "<<bananas_eaten_per_hour(array,hours,size);
     return 0;
 }
